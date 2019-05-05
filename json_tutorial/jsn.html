@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON tutorial</title>
+	<meta charset="utf-8">
+	<meta name="viewpoint" content="widhth=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<script type="text/javascript">
+	/*var jsn = {
+		"name" : "mahipal",
+		"city" : "jalore",
+		"colore": "yellow" 
+	};
+	//document.write(jsn.city);
+	//console.log(jsn.name);
+	for(key in jsn){
+		//onsole.log(jsn[key]+'<br>');
+		document.write(jsn[key]+'<br>');
+	}*/
+
+	var data = {
+		"color" : ["yellow" ,"red" ,"green", "white", "black"],
+		"record" : [
+			{ "name" : "mahipal" , "city" : "jalore" },
+			{ "name" : "rishi" , "city" : "bikaner" },
+			{ "name" : "kittu" , "city" : "jodhpur" }
+		]
+	};
+	var data2 = '{"name" : "mahipal", "city" : "jodhpur"}';
+	var json_object = JSON.parse(data2);
+	document.write(json_object.name);
+	/*for(index in data.record){
+		document.write("<br>");
+		for(inner_index in data.record[index]){
+			document.write(data.record[index][inner_index]+" ");
+		}
+	}
+	for(index in data.record[0]){
+		document.write(data.record[2][index]+'<br>');
+	}
+	for(index in data.color){
+		document.write(data.color[index]+'<br>');
+	}*/
+	var stringdata;
+	stringdata = JSON.stringify(data);
+	function sendjsondata(){
+		window.location	= 'handjsndata.php?x='+stringdata;
+	} 
+</script>
+<button onclick="sendjsondata()">Send JSON Data</button>
+</body>
+</html>
